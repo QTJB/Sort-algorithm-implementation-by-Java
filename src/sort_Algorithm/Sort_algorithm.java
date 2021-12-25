@@ -12,10 +12,12 @@ public class Sort_algorithm {
 	private static int[][] matrixRecursive2;
 	private static int[][] matrixRecursive3;
 	private static int[][] matrixRecursive4;
+	private static int[][] matrixRecursive5;
 	private static int insertSortCount = 0;
 	private static int mergeSortCount = 0;
 	private static int quickSortCount = 0;
 	private static int selectSortCount = 0;
+	private static int bubbleSortCount = 0;
 
 //	Setting All permutation.
 	static void setAllCondition() {
@@ -33,6 +35,7 @@ public class Sort_algorithm {
 		matrixRecursive2 = setConditionByRecursive(number);
 		matrixRecursive3 = setConditionByRecursive(number);
 		matrixRecursive4 = setConditionByRecursive(number);
+		matrixRecursive5 = setConditionByRecursive(number);
 
 //		Notifying user that the function is completed.
 		System.out.println("Initial condition established through recursive algorithm." + "\n");
@@ -95,12 +98,14 @@ public class Sort_algorithm {
 		mergeSortToMatrix();
 		quickSortToMatrix();
 		selectSortToMatrix();
+		bubbleSortToMatrix();
 
 		System.out.println("************************************************" + "\n" + "Summary:");
 		System.out.println("Total number of comparisons via insertionSort of matrix are :" + insertSortCount);
 		System.out.println("Total number of comparisons via MergeSort of matrix are :" + mergeSortCount);
 		System.out.println("Total number of comparisons via Quick Sort of matrix are :" + quickSortCount);
-		System.out.println("Total number of comparisons via Selection Sort of matrix are :" + selectSortCount + "\n");
+		System.out.println("Total number of comparisons via Selection Sort of matrix are :" + selectSortCount);
+		System.out.println("Total number of comparisons via Bubble Sort of matrix are :" + bubbleSortCount + "\n");
 
 		System.out.println(
 				"The permutation possibility of this Arrays are: " + permutationsNumber + "." + "\n\n" + "Therefore:");
@@ -116,6 +121,9 @@ public class Sort_algorithm {
 		System.out.println("The average number of element comparisons of selection sort is: " + selectSortCount + "/"
 				+ permutationsNumber + " = "
 				+ String.format("%.4f", (Double.valueOf(selectSortCount) / permutationsNumber)));
+		System.out.println("The average number of element comparisons of Bubble sort is: " + bubbleSortCount + "/"
+				+ permutationsNumber + " = "
+				+ String.format("%.4f", (Double.valueOf(bubbleSortCount) / permutationsNumber)));
 
 		System.out.println("************************************************");
 	}
@@ -129,7 +137,6 @@ public class Sort_algorithm {
 
 		System.out.println("************************************************");
 		System.out.println("Total number of comparisons via insertionSort of Recursive matrix:  " + insertSortCount);
-
 	}
 
 //	Using merge sort.
@@ -141,7 +148,6 @@ public class Sort_algorithm {
 
 		System.out.println("************************************************");
 		System.out.println("Total number of comparisons via mergeSort of Recursive matrix:  " + mergeSortCount);
-
 	}
 
 //	Using quick sort.
@@ -153,7 +159,6 @@ public class Sort_algorithm {
 
 		System.out.println("************************************************");
 		System.out.println("Total number of comparisons via quickSort of Recursive matrix:  " + quickSortCount);
-
 	}
 
 //	Using selection sort.
@@ -165,7 +170,17 @@ public class Sort_algorithm {
 
 		System.out.println("************************************************");
 		System.out.println("Total number of comparisons via selectSort of Recursive matrix:  " + selectSortCount);
+	}
 
+//	Using Bubble sort.
+	private static void bubbleSortToMatrix() {
+
+		for (int i = 0; i <= matrixRecursive5.length - 1; ++i) {
+			BubbleSort.bubbleSort(matrixRecursive5[i]);
+		}
+
+		System.out.println("************************************************");
+		System.out.println("Total number of comparisons via bubbleSort of Recursive matrix:  " + bubbleSortCount);
 	}
 
 	/*--------------------------------------------------------
@@ -214,6 +229,8 @@ public class Sort_algorithm {
 			quickSortCount++;
 		case 4:
 			selectSortCount++;
+		case 5:
+			bubbleSortCount++;
 			break;
 		default:
 			throw new IllegalArgumentException("Unexpected typeOfSort number: " + typeOfSort);
