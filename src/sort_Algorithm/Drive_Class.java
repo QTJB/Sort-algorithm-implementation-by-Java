@@ -19,23 +19,25 @@ public class Drive_Class {
 		System.out.println(
 				"All Initial condition established." + "\n" + "************************************************");
 
-		/*
-		 * three function below is use for display the matrix and check whether
-		 * permutation is same. Due to these function consume lots of times and resource
-		 * when N = 10. Therefore, use this Function If when we needed instead of keep
-		 * using this methods.
-		 */
-
-//		Sort_algorithm.displayTwoMatrix();
-//		Sort_algorithm.displaythreeSortedMatrix();
-//		Sort_algorithm.checkIsAnyRepeat(matrixIterative);
-//		Sort_algorithm.checkIsAnyRepeat(matrixRecursive);
+//		testFunction();
 
 		Sort_algorithm.allSortMethodToMatrix();
 
-//		Sort_algorithm.displayTwoMatrix();
-//		Sort_algorithm.displaythreeSortedMatrix();
+//		testFunction();
 
 	}
 
+	/*
+	 * three function below is use for display the matrix and check whether
+	 * permutation is same. Due to these function consume lots of times and resource
+	 * when N = 10. Therefore, use this Function If when we needed instead of keep
+	 * using this methods.
+	 */
+	private static void testFunction() {
+//		Sort_algorithm.displayTwoMatrix();
+		Sort_algorithm.displayAllSortedMatrix();
+
+//		Sort_algorithm.checkIsAnyRepeat(Sort_algorithm.matrixIterative());
+//		Sort_algorithm.checkIsAnyRepeat(Sort_algorithm.matrixRecursive());
+	}
 }
