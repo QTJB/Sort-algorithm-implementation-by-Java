@@ -19,7 +19,7 @@ public class Drive_Class {
 		System.out.println(
 				"All Initial condition established." + "\n" + "************************************************");
 
-		testFunction();
+//		testFunction();
 
 		Sort_algorithm.allSortMethodToMatrix();
 
